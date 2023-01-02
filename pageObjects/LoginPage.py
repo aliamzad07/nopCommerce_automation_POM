@@ -1,11 +1,15 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+
 class LoginPage:
     textbox_username_id="Email"
     textbox_password_id="Password"
     button_login_xpath="//button[contains(text(),'Log in')]"
     link_logout_linktext="Logout"
 
-    def __init__(self,driver):
-        self.driver=driver
+    def __init__(self):
+        self.driver= webdriver.Chrome()
 
     def passUserName(self,username):
         self.driver.find_element(By.ID, self.textbox_username_id).clear()
